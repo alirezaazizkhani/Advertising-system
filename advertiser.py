@@ -2,11 +2,20 @@ from base_model import BaseAdvertising
 
 class Advertiser(BaseAdvertising):
     TotalClicks = 0
+    Ids = []
     def __init__(self, id, name):
         super().__init__()
         self.setId(id)
         self.__name = name
     
+    def setId(self, id):
+        if id in Advertiser.Ids:
+            print("id already exist")
+            exit()
+        else:
+            Advertiser.Ids.append(id)
+            super().setId(id)
+
     def getName(self):
         return self.__name
     

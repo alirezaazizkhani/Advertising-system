@@ -10,6 +10,14 @@ class Ad(BaseAdvertising):
         self.__link = link
         self.__advertiser = advertiser
     
+    def setId(self, id):
+        if id in Advertiser.Ids:
+            print("id already exist")
+            exit()
+        else:
+            Advertiser.Ids.append(id)
+            super().setId(id)
+
     def getTitle(self):
         return self.__title
     
