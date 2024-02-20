@@ -2,6 +2,7 @@ from base_model import BaseAdvertising
 from advertiser import Advertiser
 
 class Ad(BaseAdvertising):
+    Ids = []
     def __init__(self, id, title, imgUrl, link, advertiser: Advertiser):
         super().__init__()
         self.setId(id)
@@ -15,7 +16,7 @@ class Ad(BaseAdvertising):
             print("id already exist")
             exit()
         else:
-            Advertiser.Ids.append(id)
+            Ad.Ids.append(id)
             super().setId(id)
 
     def getTitle(self):
