@@ -1,4 +1,4 @@
-from baes_model import BaseAdvertising
+from base_model import BaseAdvertising
 from ad import Ad
 from advertiser import Advertiser
 
