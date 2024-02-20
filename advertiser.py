@@ -1,4 +1,4 @@
-from baes_model import BaseAdvertising
+from base_model import BaseAdvertising
 
 class Advertiser(BaseAdvertising):
     TotalClicks = 0
