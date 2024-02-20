@@ -1,5 +1,6 @@
 from base_model import BaseAdvertising
 from advertiser import Advertiser
+
 class Ad(BaseAdvertising):
     def __init__(self, id, title, imgUrl, link, advertiser: Advertiser):
         super().__init__()
