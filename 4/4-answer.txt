@@ -1,0 +1,22 @@
+CREATE TABLE  Advertiser (
+	ID INT NOT NULL,
+	Name  VARCHAR (25) NOT NULL,
+	Clicks INT DEFAULT '0',
+	Views INT DEFAULT '0',
+	PRIMARY KEY (ID)
+	);
+	
+
+CREATE TABLE Ad (
+	ID INT NOT NULL,
+	Title VARCHAR (100) NOT NULL,
+	imgUrl VARCHAR NOT NULL,
+	Link VARCHAR NOT NULL,
+	Clicks INT DEFAULT '0',
+	Views INT DEFAULT '0',
+	Advertiser_id INT,
+	CONSTRAINT FK_Advertiser
+	FOREIGN KEY(Advertiser_id) 
+	REFERENCES Advertiser(ID),
+	PRIMARY KEY (ID)
+	);
