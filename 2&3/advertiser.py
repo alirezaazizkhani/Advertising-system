@@ -1,26 +1,26 @@
 from base_model import BaseAdvertising
 
 class Advertiser(BaseAdvertising):
-    TotalClicks = 0
-    Ids = []
+    _totalClicks  = 0
+    _ids = []
     def __init__(self, id, name):
         super().__init__()
         self.setId(id)
-        self.__name = name
+        self._name = name
     
     def setId(self, id):
-        if id in Advertiser.Ids:
+        if id in Advertiser._ids:
             print("id already exist")
             exit()
         else:
-            Advertiser.Ids.append(id)
+            Advertiser._ids.append(id)
             super().setId(id)
 
     def getName(self):
-        return self.__name
+        return self._name
     
     def setName(self, name):
-        self.__name = name
+        self._name = name
 
     def help():
         return """
@@ -33,25 +33,13 @@ class Advertiser(BaseAdvertising):
 
     @staticmethod
     def getTotalClicks():
-        return  Advertiser.TotalClicks
+        return Advertiser._totalClicks
 
     def incClicks(self):
-        Advertiser.TotalClicks += 1
+        Advertiser._totalClicks += 1
         super().incClicks()
     
     def describeMe(self):
         return """ 
         Advertiser is a class for managing advertisers by their name and id.
 """
-
-if __name__ == '__main__':
-    ex = Advertiser(10)
-    ex.incClicks()
-
-    ex2 = Advertiser(11)
-    ex2.incClicks()
-    ex2.incClicks()
-
-    print(ex.getClicks())
-    print(ex2.getClicks())
-    print(Advertiser.getTotalClicks())

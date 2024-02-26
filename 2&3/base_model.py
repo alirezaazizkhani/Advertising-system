@@ -1,29 +1,25 @@
 class BaseAdvertising():
     def __init__(self):
-        self.__id = None
-        self.__clicks = 0
-        self.__views = 0
+        self._id = None
+        self._clicks = 0
+        self._views = 0
     
     def setId(self, id):
-        self.__id = id
+        self._id = id
 
     def getClicks(self):
-        return self.__clicks
+        return self._clicks
 
     def getViews(self):
-        return self.__views
+        return self._views
     
     def incClicks(self):
-        self.__clicks += 1
+        self._clicks += 1
     
     def incViews(self):
-        self.__views += 1
+        self._views += 1
 
     def describeMe(self):
         return """
         BaseAdvertising is a base class for advertising and ad classes
 """
-
-
-if __name__ == '__main__':
-    pass
